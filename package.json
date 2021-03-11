@@ -1,0 +1,88 @@
+{
+  "name": "last-evil-buttplug",
+  "version": "0.1.0",
+  "description": "Last Evil launcher now with 900% more vibrator support.",
+  "main": "index.js",
+  "homepage": "./",
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "scripts": {
+    "start-react": "craco start",
+    "start-forge": "electron-forge start",
+    "start": "concurrently \"npm run start-react\" \"wait-on http://localhost:3000 && npm run start-forge\"",
+    "build": "craco build",
+    "test": "craco test",
+    "setup-dist": "npx @electron-forge/cli import",
+    "dist": "npm run build && npm run make",
+    "rebuild": "./node_modules/.bin/electron-rebuild -f -v 8",
+    "package": "electron-forge package",
+    "make": "electron-forge make"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@craco/craco": "^6.1.1",
+    "@maustec/react-buttplug": "^0.0.5",
+    "buttplug": "^1.0.12",
+    "electron-is-dev": "^2.0.0",
+    "electron-squirrel-startup": "^1.0.0",
+    "frida-inject": "^0.4.1",
+    "frida-mono-api": "git+https://github.com/freehuntx/frida-mono-api.git#master",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0"
+  },
+  "config": {
+    "forge": {
+      "packagerConfig": {
+        "asar": true
+      },
+      "makers": [
+        {
+          "name": "@electron-forge/maker-squirrel",
+          "config": {
+            "name": "leduino_desktop"
+          }
+        },
+        {
+          "name": "@electron-forge/maker-zip",
+          "platforms": [
+            "darwin"
+          ]
+        },
+        {
+          "name": "@electron-forge/maker-deb",
+          "config": {}
+        },
+        {
+          "name": "@electron-forge/maker-rpm",
+          "config": {}
+        }
+      ]
+    }
+  },
+  "devDependencies": {
+    "@electron-forge/cli": "^6.0.0-beta.54",
+    "@electron-forge/maker-deb": "^6.0.0-beta.54",
+    "@electron-forge/maker-rpm": "^6.0.0-beta.54",
+    "@electron-forge/maker-squirrel": "^6.0.0-beta.54",
+    "@electron-forge/maker-zip": "^6.0.0-beta.54",
+    "concurrently": "^5.3.0",
+    "electron": "^11.3.0",
+    "electron-rebuild": "^2.3.5",
+    "react-scripts": "^4.0.1",
+    "wait-on": "^5.2.0"
+  }
+}
