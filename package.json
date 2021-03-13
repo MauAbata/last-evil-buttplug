@@ -1,7 +1,7 @@
 {
   "name": "last-evil-buttplug",
-  "version": "0.1.0",
-  "description": "Last Evil launcher now with 900% more vibrator support.",
+  "version": "0.1.1",
+  "description": "Last Evil launcher now with 900% more vibrator support using Buttplug.io.",
   "main": "index.js",
   "homepage": "./",
   "eslintConfig": {
@@ -31,7 +31,7 @@
     "package": "electron-forge package",
     "make": "electron-forge make"
   },
-  "author": "",
+  "author": "Mau Abata <mauabata@gmail.com>",
   "license": "ISC",
   "dependencies": {
     "@craco/craco": "^6.1.1",
